@@ -48,6 +48,18 @@ top_instructor <- function(discipline = "All") {
 
 ## Summarize cycling classes, valid inputs for type are "All", "Live", "On Demand", "Just Ride", and "Scenic"
 ## Function ignores any
-cycling_summary <- function(data = workout_data_interface, type = "All", min_time = 11) {
+#' @title Cycling Summary
+#' @name cycling_summary()
+#' @description
+#' @usage cycling_summary(data = workout_data_interface, type = "All", min_time = 11, min_output = 50)
+#'
+#' @param data - A formatted dataframe read in using setup_peloton_data. Defaults to a variable, "workout_data_interface", that is the output from that function.
+#' @param type Which type of
+#' @param min_time The minimum amount of time to be summarized, used to exclude short rides, either ones that were aborted or warmups/cooldowns. Defaults to 11 minutes to exclude all rides 10  minutes or shorter
+#' @param min_output The minimum output to be included in the summary. Defaults to 50 KJ
+#' @examples
+#' @
+
+cycling_summary <- function(data = workout_data_interface, type = "All", min_time = 11, min_output = 50) {
 
 }
