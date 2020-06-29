@@ -11,6 +11,9 @@ setup_peloton_data(display_name = leaderboard_name)
 \arguments{
 \item{display_name}{Your display name on the leaderboard. If you have already set it as a string in a variable named \code{leaderboard_name}, it will use that by default}
 }
+\value{
+Returns a dataframe, workout_data_interface
+}
 \description{
 Setup Peloton data
 
@@ -20,4 +23,5 @@ Set up peloton data, which you can retrieve directly from your profile once you'
 setup_peloton_data()
 setup_peloton_data(leaderboard_name)
 setup_peloton_data(display_name = "leaderboardName")
+
 }

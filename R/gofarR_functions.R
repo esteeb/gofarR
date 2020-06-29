@@ -72,8 +72,9 @@ top_instructor <- function(discipline = "All") {
 cycling_summary <- function(data = workout_data_interface, type = "All", min_time = 11, min_output = 50) {
   # Selects only cycling rides which conform to min_time and min_output
   data <- data%>%
-    filter(Fitness.Discipline == "Cycling")%>%
-    filter(Length..minutes. >= min_time & Total.Output >= min_output)
+    dplyr::filter(Fitness.Discipline == "Cycling")%>%
+    dplyr::filter(Length..minutes. >= min_time)%>%
+    dplyr::filter(Total.Output >= min_output)
   # Selects only rides corresponding to type, using a regular expression to find relevant rides
   if (type !="All") {
     if (type == "Class") {
