@@ -22,11 +22,14 @@ cycling_classes <- c(1:10)
 #' setup_peloton_data(display_name = "leaderboardName")
 setup_peloton_data <- function(display_name = leaderboard_name) {
   workout_data_interface <<- read.csv(paste0(display_name,"_workouts.csv"))
-  cycling_classes <<- workout_data_interface %>%
-    filter(Fitness.Discipline == "Cycling")%>%
-    filter(!grepl("*Just Ride", Title) & !grepl("*Scenic*", Title))
 }
 
+#' @name top_instructor
+#' @title View top instructor
+#'
+#'
+#'
+#' @param discipline
 top_instructor <- function(discipline = "All") {
   if (discipline == "All") {
     filt_by_disc <- workout_data_interface%>%
@@ -49,5 +52,9 @@ top_instructor <- function(discipline = "All") {
 ## Summarize cycling classes, valid inputs for type are "All", "Live", "On Demand", "Just Ride", and "Scenic"
 ## Function ignores any
 cycling_summary <- function(data = workout_data_interface, type = "All", min_time = 11) {
-
+  cycling_classes <<- data %>%
+    filter(Fitness.Discipline == "Cycling")%>%
+    filter(!grepl("*Just Ride", Title) & !grepl("*Scenic*", Title))
+  min_time_filt <- data%>%
+    filter(Length..Minutes >= min_time)
 }
