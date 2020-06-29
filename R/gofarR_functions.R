@@ -20,6 +20,9 @@ cycling_classes <- c(1:10)
 #' setup_peloton_data()
 #' setup_peloton_data(leaderboard_name)
 #' setup_peloton_data(display_name = "leaderboardName")
+#'
+#' @return Returns a dataframe, workout_data_interface
+#'
 setup_peloton_data <- function(display_name = leaderboard_name) {
   workout_data_interface <<- read.csv(paste0(display_name,"_workouts.csv"))
 }
@@ -49,16 +52,6 @@ top_instructor <- function(discipline = "All") {
   print(top_inst, row.names = FALSE)
 }
 
-## Summarize cycling classes, valid inputs for type are "All", "Live", "On Demand", "Just Ride", and "Scenic"
-## Function ignores any
-<<<<<<< HEAD
-cycling_summary <- function(data = workout_data_interface, type = "All", min_time = 11) {
-  cycling_classes <<- data %>%
-    filter(Fitness.Discipline == "Cycling")%>%
-    filter(!grepl("*Just Ride", Title) & !grepl("*Scenic*", Title))
-  min_time_filt <- data%>%
-    filter(Length..Minutes >= min_time)
-=======
 #' @title Cycling Summary
 #' @name cycling_summary()
 #' @description
@@ -69,9 +62,31 @@ cycling_summary <- function(data = workout_data_interface, type = "All", min_tim
 #' @param min_time The minimum amount of time to be summarized, used to exclude short rides, either ones that were aborted or warmups/cooldowns. Defaults to 11 minutes to exclude all rides 10  minutes or shorter
 #' @param min_output The minimum output to be included in the summary. Defaults to 50 KJ
 #' @examples
-#' @
+#'
+#' cycling_summary()
+#' cycling_summary(type = "Climb", min_time = 11, min_ouput = 200)
+#'
+#' @return
+#' @export
 
 cycling_summary <- function(data = workout_data_interface, type = "All", min_time = 11, min_output = 50) {
+  # Selects only cycling rides which conform to min_time and min_output
+  data <- data%>%
+    filter(Fitness.Discipline == "Cycling")%>%
+    filter(Length..minutes. >= min_time & Total.Output >= min_output)
+  # Selects only rides corresponding to type, using a regular expression to find relevant rides
+  if (type !="All") {
+    if (type == "Class") {
+      data <- data%>%
+        filter(!grepl("*Just Ride", Title) & !grepl("*Scenic*", Title))
+    }
+    else {
+      data <- filter(data, grepl(paste0("*",type,"*"), data$Title))
+    }
+  }
+  else data
 
->>>>>>> 1dcdb8e504b41cfa07f0719f4f2644dffab17410
+
+
+
 }
