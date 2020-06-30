@@ -1,6 +1,8 @@
 ##Peloton scripts
 library(dplyr)
 
+## Initialize workout_data_interface to make things simpler
+workout_data_interface <- c(1:10)
 
 ##
 
