@@ -11,5 +11,6 @@ LazyData: true
 RoxygenNote: 7.1.0
 Imports:
   dplyr,
-  magrittr
+  magrittr,
+  testthat
 Depends: R (>= 4.0.0)

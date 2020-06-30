@@ -4,19 +4,19 @@
 \alias{cycling_summary}
 \title{Cycling Summary}
 \usage{
-cycling_summary(w_data = workout_data_interface, type = "All", min_time = 11, min_output = 50)
+cycling_summary(w_data, type = "All", min_time = 11, min_output = 50)
 }
 \arguments{
 \item{w_data}{- A formatted dataframe read in using setup_peloton_data. Defaults to a variable, "workout_data_interface", that is the output from that function.}
 
-\item{type}{Which type of}
+\item{type}{Which type of workout will this summarize}
 
 \item{min_time}{The minimum amount of time to be summarized, used to exclude short rides, either ones that were aborted or warmups/cooldowns.}
 
 \item{min_output}{The minimum output to be included in the summary. Defaults to 50 KJ}
 }
 \value{
-
+Returns a summary, future versions will also return plots
 }
 \description{
 This function summarizes cycling data

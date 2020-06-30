@@ -15,7 +15,7 @@ top_instructor(w_data = workout_data_interface, discipline = "All")
 View top instructor
 }
 \examples{
-top_instructor()
+top_instructor(workout_data_interface)
 top_instructor(discipline = "Yoga")
 
 }

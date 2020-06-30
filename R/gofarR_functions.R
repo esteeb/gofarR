@@ -1,5 +1,7 @@
 ##
 
+load("data/workout_data_interface.rda")
+
 # Reads in <username>_workouts.csv and sets a number of values in the global environment
 # Defines data loaded this way as <variable>_interface in order to clarify which source
 # we are talking about
@@ -16,7 +18,7 @@
 #' @export
 #'
 setup_peloton_data <- function(display_name) {
-  workout_data_interface <- read.csv(paste0(display_name,"_workouts.csv"))
+  workout_data_interface <- utils::read.csv(paste0(display_name,"_workouts.csv"))
   data.frame(workout_data_interface)
 }
 
@@ -24,7 +26,7 @@ setup_peloton_data <- function(display_name) {
 #' @title View top instructor
 #'
 #' @examples
-#' top_instructor()
+#' top_instructor(workout_data_interface)
 #' top_instructor(discipline = "Yoga")
 #'
 #' @export
@@ -49,10 +51,9 @@ top_instructor <- function(w_data = workout_data_interface, discipline = "All") 
 #' @title Cycling Summary
 #' @name cycling_summary
 #' @description This function summarizes cycling data
-#' @usage cycling_summary(w_data = workout_data_interface, type = "All", min_time = 11, min_output = 50)
-#'
+#' @usage cycling_summary(w_data, type = "All", min_time = 11, min_output = 50)
 #' @param w_data - A formatted dataframe read in using setup_peloton_data. Defaults to a variable, "workout_data_interface", that is the output from that function.
-#' @param type Which type of
+#' @param type Which type of workout will this summarize
 #' @param min_time The minimum amount of time to be summarized, used to exclude short rides, either ones that were aborted or warmups/cooldowns.
 #' @param min_output The minimum output to be included in the summary. Defaults to 50 KJ
 #' @examples
@@ -60,7 +61,7 @@ top_instructor <- function(w_data = workout_data_interface, discipline = "All") 
 #' cycling_summary()
 #' cycling_summary(type = "Climb", min_time = 11)
 #'
-#' @return
+#' @return Returns a summary, future versions will also return plots
 #' @export
 
 cycling_summary <- function(w_data = workout_data_interface,
@@ -75,7 +76,7 @@ cycling_summary <- function(w_data = workout_data_interface,
       data <- dplyr::filter(data, !grepl("*Just Ride", data$Title) & !grepl("*Scenic*", data$Title))
     }
     else {
-      data <- filter(data, grepl(paste0("*",type,"*"), data$Title))
+      data <- dplyr::filter(data, grepl(paste0("*",type,"*"), data$Title))
     }
   }
   else data
