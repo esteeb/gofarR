@@ -29,8 +29,8 @@ setup_peloton_data <- function(display_name = leaderboard_name) {
 #' @name top_instructor
 #' @title View top instructor
 #'
-#'
-#'
+#' @export
+#' @importFrom
 #' @param discipline
 top_instructor <- function(discipline = "All") {
   if (discipline == "All") {

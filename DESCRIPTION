@@ -12,4 +12,4 @@ RoxygenNote: 7.1.0
 Imports:
   dplyr,
   magrittr
-Depends: R (>= 4.0.0)
+Depends: R (>= 4.0.0), magrittr
