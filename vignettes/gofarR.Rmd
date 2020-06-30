@@ -1,0 +1,22 @@
+---
+title: "gofarR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{gofarR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(gofarR)
+```
+
+# GoFarR package
+This package exists to help you analyze your workout data from both the Peloton profile interface and the API (whihc is not fully documented, unfortunately).

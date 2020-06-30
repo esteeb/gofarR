@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/erehnberg/gofarR.svg?branch=master)](https://travis-ci.com/erehnberg/gofarR)
+
 ---
 title: "README"
 author: "Erik Rehnberg"
