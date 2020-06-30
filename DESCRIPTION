@@ -4,7 +4,7 @@ Title: An R interface to the Peloton API
 Version: 0.0.1.9001
 Author: Erik Rehnberg
 Maintainer: Erik Rehnberg <erik.m.rehnberg@gmail.com>
-Description: Functions to manipulate and analyze data from both the Peloton profile interface and, using pelotonR, from the API
+Description: THis package includes functions to manipulate and analyze data from both the Peloton profile interface and, using pelotonR, from the API. It currenly imports functions from PelotonR as well. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -12,4 +12,4 @@ RoxygenNote: 7.1.0
 Imports:
   dplyr,
   magrittr
-Depends: R (>= 4.0.0), magrittr
+Depends: R (>= 4.0.0)

@@ -12,7 +12,7 @@ cycling_summary(data = workout_data_interface, type = "All", min_time = 11, min_
 
 \item{type}{Which type of}
 
-\item{min_time}{The minimum amount of time to be summarized, used to exclude short rides, either ones that were aborted or warmups/cooldowns. Defaults to 11 minutes to exclude all rides 10  minutes or shorter}
+\item{min_time}{The minimum amount of time to be summarized, used to exclude short rides, either ones that were aborted or warmups/cooldowns.}
 
 \item{min_output}{The minimum output to be included in the summary. Defaults to 50 KJ}
 }
@@ -20,11 +20,10 @@ cycling_summary(data = workout_data_interface, type = "All", min_time = 11, min_
 
 }
 \description{
-Cycling Summary
+This function summarizes cycling data
 }
 \examples{
-
 cycling_summary()
-cycling_summary(type = "Climb", min_time = 11, min_ouput = 200)
+cycling_summary(type = "Climb", min_time = 11)
 
 }

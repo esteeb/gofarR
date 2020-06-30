@@ -6,7 +6,7 @@
 
 Set up peloton data, which you can retrieve directly from your profile once you've logged in to onepeloton.com}
 \usage{
-setup_peloton_data(display_name = leaderboard_name)
+setup_peloton_data(display_name = "None")
 }
 \arguments{
 \item{display_name}{Your display name on the leaderboard. If you have already set it as a string in a variable named \code{leaderboard_name}, it will use that by default}
@@ -18,10 +18,4 @@ Returns a dataframe, workout_data_interface
 Setup Peloton data
 
 Set up peloton data, which you can retrieve directly from your profile once you've logged in to onepeloton.com
-}
-\examples{
-setup_peloton_data()
-setup_peloton_data(leaderboard_name)
-setup_peloton_data(display_name = "leaderboardName")
-
 }
