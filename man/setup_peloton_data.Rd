@@ -6,7 +6,7 @@
 
 Set up peloton data, which you can retrieve directly from your profile once you've logged in to onepeloton.com}
 \usage{
-setup_peloton_data(display_name = "None")
+setup_peloton_data(display_name)
 }
 \arguments{
 \item{display_name}{Your display name on the leaderboard. If you have already set it as a string in a variable named \code{leaderboard_name}, it will use that by default}

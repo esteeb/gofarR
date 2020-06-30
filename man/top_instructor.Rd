@@ -4,8 +4,18 @@
 \alias{top_instructor}
 \title{View top instructor}
 \usage{
-top_instructor(discipline = "All")
+top_instructor(w_data = workout_data_interface, discipline = "All")
+}
+\arguments{
+\item{w_data}{- Workout data read in from setup_peloton_data}
+
+\item{discipline}{The class discipline to be summarized. Defaults to "All"}
 }
 \description{
 View top instructor
+}
+\examples{
+top_instructor()
+top_instructor(discipline = "Yoga")
+
 }
