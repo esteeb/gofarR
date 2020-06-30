@@ -16,13 +16,15 @@ workout_data_interface <- c(1:10)
 #'
 #'
 #' @param display_name Your display name on the leaderboard. If you have already set it as a string in a variable named \code{leaderboard_name}, it will use that by default
-#' @export
+#'
 #' @examples
 #' setup_peloton_data()
 #' setup_peloton_data(leaderboard_name)
 #' setup_peloton_data(display_name = "leaderboardName")
 #'
 #' @return Returns a dataframe, workout_data_interface
+#'
+#' @export
 #'
 setup_peloton_data <- function(display_name = leaderboard_name) {
   workout_data_interface <<- read.csv(paste0(display_name,"_workouts.csv"))
