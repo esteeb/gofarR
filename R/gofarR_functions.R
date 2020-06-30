@@ -1,7 +1,6 @@
 ##Peloton scripts
 library(dplyr)
 
-cycling_classes <- c(1:10)
 
 ##
 
@@ -72,9 +71,9 @@ top_instructor <- function(discipline = "All") {
 cycling_summary <- function(data = workout_data_interface, type = "All", min_time = 11, min_output = 50) {
   # Selects only cycling rides which conform to min_time and min_output
   data <- data%>%
-    dplyr::filter(Fitness.Discipline == "Cycling")%>%
-    dplyr::filter(Length..minutes. >= min_time)%>%
-    dplyr::filter(Total.Output >= min_output)
+    filter(Fitness.Discipline == "Cycling")%>%
+    filter(Length..minutes. >= min_time)%>%
+    filter(Total.Output >= min_output)
   # Selects only rides corresponding to type, using a regular expression to find relevant rides
   if (type !="All") {
     if (type == "Class") {
@@ -87,7 +86,7 @@ cycling_summary <- function(data = workout_data_interface, type = "All", min_tim
   }
   else data
 
-
+data
 
 
 }
