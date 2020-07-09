@@ -2,7 +2,7 @@
 
 ---
 title: "README"
-author: "Erik Rehnberg"
+author: "Erik Rehnberg Steeb"
 date: "6/25/2020"
 output: html_document
 ---
@@ -13,7 +13,7 @@ The goal of this package will be to take as inputs both direct calls to the Pelo
 
 ### Currently working functions
 * setup_peloton_data() - Reads in a .csv pulled from your profile. Takes the leaderboard_name argument
-* top_instructor() -  Shows top instructor, both overall and for each discipline; defaults to all
+* top_instructor() -  Shows top instructor, both overall and for each discipline; defaults to all disciplines
 
 ### In progress functions
 * cycling_summary() -  Breakdown of Live Classes, On-Demand Classes, and Just Ride workouts, can summarize and plot average power output by class duration, can filter by class type, nothing is pre-determined, but can be selected based off of what types of classes you've taken. 

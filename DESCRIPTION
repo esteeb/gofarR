@@ -12,8 +12,7 @@ RoxygenNote: 7.1.0
 Imports:
   dplyr,
   magrittr,
-  testthat,
-  qpdf
+  testthat
 Depends: R (>= 4.0.0)
 Suggests: 
     knitr,

@@ -5,15 +5,15 @@ load("data/workout_data_interface.rda")
 # Reads in <username>_workouts.csv and sets a number of values in the global environment
 # Defines data loaded this way as <variable>_interface in order to clarify which source
 # we are talking about
-#' @name  setup_peloton_data
+#' @name  setup_peloton_data()
 #' @title Setup Peloton data
 #'
-#' Set up peloton data, which you can retrieve directly from your profile once you've logged in to onepeloton.com
+#' Set up peloton data, which you can retrieve directly from your profile once you've logged in to onepeloton.com. Assumes that your workout data has not been renamed and is in your working directory.
 #'
 #'
 #' @param display_name Your display name on the leaderboard. If you have already set it as a string in a variable named \code{leaderboard_name}, it will use that by default
 #'
-#' @return Returns a dataframe, workout_data_interface
+#' @return Returns a dataframe, workout_data_interface. Please save it in your global environment as under the same name, workout_data_interface, since that is the default for all other functions in this package.
 #'
 #' @export
 #'
@@ -22,7 +22,7 @@ setup_peloton_data <- function(display_name) {
   data.frame(workout_data_interface)
 }
 
-#' @name top_instructor
+#' @name top_instructor()
 #' @title View top instructor
 #'
 #' @examples
@@ -49,7 +49,7 @@ top_instructor <- function(w_data = workout_data_interface, discipline = "All") 
 }
 
 #' @title Cycling Summary
-#' @name cycling_summary
+#' @name cycling_summary()
 #' @description This function summarizes cycling data
 #' @usage cycling_summary(w_data, type = "All", min_time = 11, min_output = 50)
 #' @param w_data - A formatted dataframe read in using setup_peloton_data. Defaults to a variable, "workout_data_interface", that is the output from that function.
@@ -84,3 +84,14 @@ data
 
 
 }
+
+
+#' @title Decoupling Analysis
+#' @name decoupling()
+#' @description This function takes watt and heartrate data from the API, subsets it to only look at the workouts that you specify, and determines your decoupling by workout, as well as trends by workout length and by time.
+#'
+
+#' @export
+#'
+
+decoupling <- function(data = workout_data_api) {}
