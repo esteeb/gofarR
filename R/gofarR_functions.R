@@ -80,18 +80,27 @@ cycling_summary <- function(w_data = workout_data_interface,
     }
   }
   else data
-data
 
+  # Split function off to handle "Just Ride" special case due to non-standardized times
+  if (type == "Just Ride") {
+    #
+    data_summary <- summarize_just_ride(data_in = data, jr_min_time = min_time, jr_min_output = min_output)
+  }
+  else {
+  # Create dataframe of number of rides by duration, with average Avg.Watts output for each duration
+    data_summary <- data
+  }
 
+  data_summary
 }
 
 
 #' @title Decoupling Analysis
 #' @name decoupling()
 #' @description This function takes watt and heartrate data from the API, subsets it to only look at the workouts that you specify, and determines your decoupling by workout, as well as trends by workout length and by time.
-#'
+#' @param data Data pulled from the API, should be stored differently than the data pulled from the interface.
 
 #' @export
 #'
 
-decoupling <- function(data = workout_data_api) {}
+decoupling <- function(data = NULL) {}

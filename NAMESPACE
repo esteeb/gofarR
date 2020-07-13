@@ -2,6 +2,7 @@
 
 export("%>%")
 export(cycling_summary)
+export(decoupling)
 export(setup_peloton_data)
 export(top_instructor)
 importFrom(magrittr,"%>%")

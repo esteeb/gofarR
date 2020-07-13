@@ -16,7 +16,7 @@ The goal of this package will be to take as inputs both direct calls to the Pelo
 * top_instructor() -  Shows top instructor, both overall and for each discipline; defaults to all disciplines
 
 ### In progress functions
-* cycling_summary() -  Breakdown of Live Classes, On-Demand Classes, and Just Ride workouts, can summarize and plot average power output by class duration, can filter by class type, nothing is pre-determined, but can be selected based off of what types of classes you've taken. 
+* cycling_summary() -  Breakdown of Live Classes, On-Demand Classes, and Just Ride workouts, returns a tibble summarizing number of classes taken by length and average power output by class duration. Plots average power output by class duration. Can filter by class type, nothing is pre-determined, but can be selected based off of what types of classes you've taken. 
 
 ### Currently planned function/abilities
 #### From \<username>_workouts.csv
